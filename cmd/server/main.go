@@ -25,7 +25,10 @@ func main() {
 	r.Use(middleware.SimpleCORS)
 
 	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("OK"))
+		_, err := w.Write([]byte("OK"))
+		if err != nil {
+			log.Panic(err.Error())
+		}
 	})
 
 	r.Route("/api", func(api chi.Router) {
