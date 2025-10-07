@@ -1,4 +1,4 @@
-module github.com/echhh0/tip_pr
+module github.com/echhh0/tip_pr4
 
 go 1.25
 
